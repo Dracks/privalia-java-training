@@ -1,6 +1,7 @@
 package com.privalia.presentation.unit.test;
 
 import com.privalia.presentation.Calculator;
+import com.privalia.presentation.ICalculator;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
