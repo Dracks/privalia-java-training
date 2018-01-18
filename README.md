@@ -1,4 +1,23 @@
+# Model
+
+Tot objecte hauria de tenir un Unic Identifier. (gid=> Global Id)
+
+Arquitectura amb PrivaliaObject amb gid, i fer que totes les classes heredin d'aquí.
+Per generar el UUID, es pilla de java.util.UUID.randomUUID()
+
+
+## Constructors
+constructor de classes (Inicialitzador static)
+> Es single thread.
+>
+> S'executa el primer cop que s'accedeixi a la clase. Sigui per crear un objecte nou o per accedir a un metode static
+
+constructor d'objecte
+
+
 #Java
+
+En Java Web, tenim variables d'applicació, son variables que conté el servidor web. 
 
 ## Compilats Java
 - jar
@@ -10,6 +29,14 @@
 
 ### Classpath
 afegir les coses que han de ser facils per localitzar
+
+## Anotacions
+Es creen amb @interface.
+Poden tenir atributs amb default values.
+
+
+Es poden applicar anotacions a la mateixa anotació
+
 
 
 # Maven
