@@ -48,6 +48,14 @@ Es poden applicar anotacions a la mateixa anotació
 ## Useful things Maven:
 [Phases maven](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
 
+mvn clean install -U
+
+Borrar la cache:
+mvn dependency:purge-local-repository clean install -U
+
+## Scopes
+test: per testing
+provided: Perque utilitzi la que et proporcioni. 
 
 
 # Log4J
@@ -62,6 +70,10 @@ PropertyConfigurator.configure <= permet indicar on esta i com es diu el fitxer 
 Per fer el log, spring utilitza una façana per encapsular la majoria de frameworks de logs. Aquesta es diu slf4j
 
 spring-boot per defecte utilitza logback, però spring-data amb hibernate utilitza log4j
+
+# Spring-boot
+
+[spring boot initializr](http://start.pring.io)
 
 # Altres
 
