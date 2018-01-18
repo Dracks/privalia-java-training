@@ -49,7 +49,19 @@ public class Student extends PrivaliaObject{
         this.age = age;
     }
 
-    public Student(int idStudent) {
+    public static Student getStudent(){
+        return new Student();
+    }
+
+    public Student(){
+        super();
+    }
+
+    public Student(int idStudent, String name, String surname, int age) {
+        super();
         this.idStudent = idStudent;
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
     }
 }

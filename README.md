@@ -25,7 +25,12 @@ En Java Web, tenim variables d'applicació, son variables que conté el servidor
 - ear
 - apk
 
+## Interficies
 
+Té l'interficia clonnable, que permet clonar l'objecte.
+
+### Interficies funcionals
+Poder afegir implementacions a les interficies. Exemple: Runnable
 
 ### Classpath
 afegir les coses que han de ser facils per localitzar
