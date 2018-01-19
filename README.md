@@ -77,5 +77,8 @@ spring-boot per defecte utilitza logback, però spring-data amb hibernate utilit
 
 # Altres
 
+## POJOS
+Plain old Java Objects
+
 ## Reflexión
 Spring utilitza "Reflexión" en català, introspecció.
