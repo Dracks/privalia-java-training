@@ -10,12 +10,14 @@ public class StudentDao implements IDao<Student>{
     @Override
     public int add(Student student) throws IOException {
         String fileName = Config.getInstance().getFilename();
+
         FileUtil.createFile(fileName);
+
         OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(new File(fileName), true));
-        BufferedWriter bfw = new BufferedWriter(osw);
-        bfw.write(student.toString());
-        bfw.newLine();
-        bfw.close();
+        try (BufferedWriter bfw = new BufferedWriter(osw)) {
+            bfw.write(student.toString());
+            bfw.newLine();
+        }
         return 0;
     }
 }

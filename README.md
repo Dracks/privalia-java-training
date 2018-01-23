@@ -32,7 +32,7 @@ Té l'interficia clonnable, que permet clonar l'objecte.
 ### Interficies funcionals
 Poder afegir implementacions a les interficies. Exemple: Runnable
 
-### Classpath
+## Classpath
 afegir les coses que han de ser facils per localitzar
 
 ## Anotacions
@@ -41,6 +41,13 @@ Poden tenir atributs amb default values.
 
 
 Es poden applicar anotacions a la mateixa anotació
+
+## Inicialitzadors statics
+No poden llençar "unmanaged exceptions", això implica que s'ha de fer un wrapping the l'excepció llençada.  (Checked vs unchecked exceptions)
+
+
+## Try with resources
+A partir de java 8, es poden utilitzar el try with resources, sempre i quant l'objecte tingui implementada l'interficie closable
 
 #JUnit
 
