@@ -45,6 +45,11 @@ Es poden applicar anotacions a la mateixa anotació
 
 
 # Maven
+
+## Archetipes
+Manera de generar una estructura de la nostra infraestructura. 
+
+
 ## Useful things Maven:
 [Phases maven](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
 
@@ -56,6 +61,9 @@ mvn dependency:purge-local-repository clean install -U
 ## Scopes
 test: per testing
 provided: Perque utilitzi la que et proporcioni. 
+
+## Settings
+settings.xml > permet configurar el mvn. 
 
 
 # Log4J
