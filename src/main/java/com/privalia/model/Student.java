@@ -64,4 +64,15 @@ public class Student extends PrivaliaObject{
         this.surname = surname;
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return Integer.toString(this.getIdStudent())+","+this.getName()+","+this.getSurname()+","+Integer.toString(this.getAge());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        return (obj instanceof Student) && this.idStudent == ((Student)obj).idStudent;
+    }
 }

@@ -1,0 +1,1 @@
+* Crear class StudentDao que guardi les coses en un fitxer de test, en base a config.properties. 

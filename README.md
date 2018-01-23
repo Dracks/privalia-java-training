@@ -42,7 +42,9 @@ Poden tenir atributs amb default values.
 
 Es poden applicar anotacions a la mateixa anotació
 
+#JUnit
 
+Té la funcionalitat d'"expected exception" per validar que s'esta llençant una excepció
 
 # Maven
 
