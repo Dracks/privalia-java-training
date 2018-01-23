@@ -23,6 +23,6 @@ public class StudentDao implements IDao<Student>{
             logger.error(e.getMessage());
             throw e;
         }
-        return 0;
+        return student.getIdStudent();
     }
 }
