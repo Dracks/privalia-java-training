@@ -94,6 +94,10 @@ spring-boot per defecte utilitza logback, però spring-data amb hibernate utilit
 
 # Altres
 
+## Lombock
+@Data en el objecte, et proporciona getters and setters, el constructor el equals, el canEquals, hashcode y el toString
+
+
 ## POJOS
 Plain old Java Objects
 
