@@ -7,17 +7,23 @@ import org.apache.log4j.Logger;
 
 import java.io.*;
 
-public class StudentDao implements IDao<Student>{
+public class StudentDao extends GenericDao<Student>{
     private static final Logger logger = Logger.getLogger(StudentDao.class);
+
+    public StudentDao(String filename, FileType csv) {
+        super(filename, csv);
+    }
+
+
     @Override
     public int add(Student student) throws IOException {
-        String fileName = Config.getInstance().getFilename();
 
-        FileUtil.createFile(fileName);
+        FileUtil.createFile(filename);
 
-        OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(new File(fileName), true));
-        try (BufferedWriter bfw = new BufferedWriter(osw)) {
-            bfw.write(student.toString());
+
+        try (OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(new File(filename), true))
+                ;BufferedWriter bfw = new BufferedWriter(osw)) {
+            this.serializer.serialize(student, bfw);
             bfw.newLine();
         } catch (IOException e){
             logger.error(e.getMessage());

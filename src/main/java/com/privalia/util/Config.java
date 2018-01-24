@@ -9,7 +9,7 @@ public class Config {
     private static Config ourInstance;
     private final Properties prop;
 
-    public static Config getInstance() throws IOException {
+    public synchronized static Config getInstance() throws IOException {
         if (ourInstance==null){
             ourInstance = new Config();
         }
