@@ -1,57 +1,17 @@
 package com.privalia.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class Student extends PrivaliaObject{
+    @Getter @Setter
     private int idStudent;
+    @Getter @Setter
     private String name;
+    @Getter @Setter
     private String surname;
+    @Getter @Setter
     private int age;
-
-
-    /*
-     * Exemple inicialitzador static
-     */
-    static int numero;
-
-    static {
-        numero = 10;
-    }
-    // Final exemple
-
-    public int getIdStudent() {
-        return idStudent;
-    }
-
-    public void setIdStudent(int idStudent) {
-        this.idStudent = idStudent;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public static Student getStudent(){
-        return new Student();
-    }
 
     public Student(){
         super();
@@ -65,14 +25,17 @@ public class Student extends PrivaliaObject{
         this.age = age;
     }
 
-    @Override
-    public String toString() {
-        return Integer.toString(this.getIdStudent())+","+this.getName()+","+this.getSurname()+","+Integer.toString(this.getAge());
+    public Student(String[] data){
+        super(data);
+        this.idStudent = Integer.valueOf(data[1].trim());
+        this.name = data[2].trim();
+        this.surname = data[3].trim();
+        this.age = Integer.valueOf(data[4].trim());
+
     }
 
     @Override
-    public boolean equals(Object obj) {
-
-        return (obj instanceof Student) && this.idStudent == ((Student)obj).idStudent;
+    public String toString() {
+        return super.toString()+","+Integer.toString(this.getIdStudent())+","+this.getName()+","+this.getSurname()+","+Integer.toString(this.getAge());
     }
 }
