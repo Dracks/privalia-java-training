@@ -1,14 +1,13 @@
 package com.privalia.util;
 
+import lombok.extern.log4j.Log4j;
 import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
 
-
+@Log4j
 public class FileUtil {
-
-    static final Logger logger = Logger.getLogger(FileUtil.class);
 
     public static synchronized boolean createFile(String file) throws IOException {
         boolean isFileCreated=false;
@@ -17,7 +16,7 @@ public class FileUtil {
             try {
                 isFileCreated = f.createNewFile();
             } catch (IOException e) {
-                logger.error(e.getMessage());
+                log.error(e.getMessage());
                 throw e;
             }
         }

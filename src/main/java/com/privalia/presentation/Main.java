@@ -3,11 +3,11 @@ package com.privalia.presentation;
 import com.privalia.model.PrivaliaObject;
 import com.privalia.model.Student;
 import com.privalia.util.MethodInfo;
+import lombok.extern.log4j.Log4j;
 import org.apache.log4j.Logger;
 
+@Log4j
 public class Main {
-
-    static final Logger logger = Logger.getLogger(Main.class);
 
     @MethodInfo(
             author="Fuck yourself",
@@ -31,7 +31,7 @@ public class Main {
         // Polimorfisme de classes
         PrivaliaObject privaliaObject = new Student();
 
-        logger.info("Student1 Name: "+student1.getName());
-        logger.info("Student2 Name: "+student2.getName());
+        log.info("Student1 Name: "+student1.getName());
+        log.info("Student2 Name: "+student2.getName());
     }
 }
