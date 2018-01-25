@@ -55,6 +55,10 @@ No poden llençar "unmanaged exceptions", això implica que s'ha de fer un wrapp
 ## Try with resources
 A partir de java 8, es poden utilitzar el try with resources, sempre i quant l'objecte tingui implementada l'interficie closable
 
+
+## Futurable
+Classes per portar les promeses aquí. 
+
 #JUnit
 
 Té la funcionalitat d'"expected exception" per validar que s'esta llençant una excepció
