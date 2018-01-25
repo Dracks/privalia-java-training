@@ -29,8 +29,14 @@ En Java Web, tenim variables d'applicació, son variables que conté el servidor
 
 Té l'interficia clonnable, que permet clonar l'objecte.
 
+Java8 permet metodes statics dins de les interficies. (i implementar-los max. 1 d'objecte i d'estatic)
+
 ### Interficies funcionals
 Poder afegir implementacions a les interficies. Exemple: Runnable
+
+Han d'incloure un metode abstracte com a mínim. 
+Per implementar el metode, s'ha de ficar la paraula reservada default.
+
 
 ## Classpath
 afegir les coses que han de ser facils per localitzar
