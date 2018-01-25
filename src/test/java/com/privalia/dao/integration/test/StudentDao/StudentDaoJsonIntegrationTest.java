@@ -1,5 +1,6 @@
 package com.privalia.dao.integration.test.StudentDao;
 
+import com.google.gson.Gson;
 import com.privalia.dao.FileType;
 import com.privalia.dao.StudentDao;
 import com.privalia.model.Student;
@@ -14,17 +15,16 @@ import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
-public class StudentDaoCsvIntegrationTest extends StudentDaoGenericIntegrationTest{
-
+public class StudentDaoJsonIntegrationTest extends StudentDaoGenericIntegrationTest {
 
     @Before
     public void setUp() throws IOException {
 
         filename = Config.getInstance().getFilename();
 
-        subject = new StudentDao(filename, FileType.CSV);
+        subject = new StudentDao(filename, FileType.JSON);
 
-        filename = filename +".csv";
+        filename = filename +".json";
 
         File f = new File(filename);
         if (f.exists()){
@@ -41,6 +41,7 @@ public class StudentDaoCsvIntegrationTest extends StudentDaoGenericIntegrationTe
     @Override
     public void testCreate() throws IOException {
         super.testCreate();
+
     }
 
     @Test
@@ -49,7 +50,14 @@ public class StudentDaoCsvIntegrationTest extends StudentDaoGenericIntegrationTe
         super.testAdd();
     }
 
+    public String getSampleFile() {
+        return "sample-output-student-list.json";
+    }
+
+
+
     public List<Student> loadFile() throws IOException {
+        Gson gson = new Gson();
         List<Student> r = new LinkedList<>();
         File f = new File(filename);
 
@@ -59,9 +67,8 @@ public class StudentDaoCsvIntegrationTest extends StudentDaoGenericIntegrationTe
         try {
             BufferedReader br = new BufferedReader(new FileReader(f));
             String line;
-            while ((line = br.readLine())!=null){
-                String[] data = line.split(",");
-                Student st = new Student(data);
+            while ((line = br.readLine())!=null && line.length()>0){
+                Student st= gson.fromJson(line, Student.class);
                 r.add(st);
             }
         }  catch (FileNotFoundException e) {
@@ -70,8 +77,5 @@ public class StudentDaoCsvIntegrationTest extends StudentDaoGenericIntegrationTe
         return r;
     }
 
-    @Override
-    public String getSampleFile() {
-        return "sample-output-student-list.csv";
-    }
+
 }

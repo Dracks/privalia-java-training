@@ -55,6 +55,25 @@ Té la funcionalitat d'"expected exception" per validar que s'esta llençant una
 
 # Maven
 
+## Run concrete tests
+Testeja una clase
+> mvn test -Dtest=$classNameTest 
+
+Testejar un metode
+>mvn test -Dtest=$className#$functionName
+
+Testejar una categoria
+> mvn test -Dtest.categories=slowTests
+
+Es classifica com:
+```
+@Category(SlowTest.class)
+@Test
+public void b(){
+
+}
+```
+
 ## Archetipes
 Manera de generar una estructura de la nostra infraestructura. 
 
@@ -97,6 +116,7 @@ spring-boot per defecte utilitza logback, però spring-data amb hibernate utilit
 ## Lombock
 @Data en el objecte, et proporciona getters and setters, el constructor el equals, el canEquals, hashcode y el toString
 
+Dona una anutació segons el framework de log que necessitis.
 
 ## POJOS
 Plain old Java Objects
