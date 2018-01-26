@@ -55,6 +55,8 @@ No poden llençar "unmanaged exceptions", això implica que s'ha de fer un wrapp
 ## Try with resources
 A partir de java 8, es poden utilitzar el try with resources, sempre i quant l'objecte tingui implementada l'interficie closable
 
+## Try catch ours
+Catch té la opcio de ficar opcional. 
 
 ## Futurable
 Classes per portar les promeses aquí. 
@@ -111,6 +113,10 @@ https://www.adictosaltrabajo.com/tutoriales/log4j/
 PropertyConfigurator.configure <= permet indicar on esta i com es diu el fitxer de configuració de log4j
 
 # Spring
+
+## Jerarquia de carpetas
+
+Por estructura de proyecto, las dependencias se autoinyectan por la jerarquia de carpetas
 
 ## Log
 Per fer el log, spring utilitza una façana per encapsular la majoria de frameworks de logs. Aquesta es diu slf4j
