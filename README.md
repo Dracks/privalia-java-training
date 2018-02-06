@@ -1,3 +1,13 @@
+# AOP (Programació orientada a aspectes)
+
+Permet interceptar dades entrants de metodes, la sortida i excepcions. 
+
+> Poder utilitzar expresions regulars per triar metodes.
+
+Spring porta el aspecte transactional.
+
+JUnit és el clar exemple de Programació orientada aspectes: SetUp, TearDown... 
+
 # Model
 
 Tot objecte hauria de tenir un Unic Identifier. (gid=> Global Id)
@@ -126,6 +136,24 @@ spring-boot per defecte utilitza logback, però spring-data amb hibernate utilit
 # Spring-boot
 
 [spring boot initializr](http://start.pring.io)
+
+Porta instalat Tomcat, Jetty i Undertow
+
+## LLibreries utilitzades:
+ + spring cloud config
+ + spring data
+ + spring security
+ + spring hateoas
+
+## Spring cloud config
+
+Montar un microserveis per gestionar totes les configuracions dels servidors. 
+
+Es pot utilitzar una repositori de git. 
+
+## Spring HateOAS
+
+Permet autoconfigurar les apis, perque el client no hagi d'anar configurar les URL.
 
 # Altres
 
