@@ -124,6 +124,11 @@ PropertyConfigurator.configure <= permet indicar on esta i com es diu el fitxer 
 
 # Spring
 
+## Arrancar configuracio de beans
+
+hi han les dos opcions ClassPathXmlApplicationContext i AnnotationConfigApplicationContext
+
+
 ## Jerarquia de carpetas
 
 Por estructura de proyecto, las dependencias se autoinyectan por la jerarquia de carpetas
