@@ -1,4 +1,4 @@
-package com.privalia.presentation;
+package com.privalia.presentation.configuration;
 
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

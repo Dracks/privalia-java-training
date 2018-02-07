@@ -1,4 +1,4 @@
-package com.privalia.presentation;
+package com.privalia.presentation.configuration;
 
 import lombok.Data;
 

@@ -8,11 +8,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
-    <bean id="helloWorld" class="com.privalia.presentation.HelloWorld">
+    <bean id="helloWorld" class="com.privalia.presentation.configuration.HelloWorld">
         <property name="hello" value="Hola holita vecinillo"/>
     </bean>
 
-    <bean id="helloWorldCons" class="com.privalia.presentation.HelloWorld">
+    <bean id="helloWorldCons" class="com.privalia.presentation.configuration.HelloWorld">
         <constructor-arg index="0" value="Hola holita des del vecinillo!" type="java.lang.String"/>
     </bean>
 </beans>
