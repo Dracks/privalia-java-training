@@ -122,7 +122,7 @@ https://www.adictosaltrabajo.com/tutoriales/log4j/
 
 PropertyConfigurator.configure <= permet indicar on esta i com es diu el fitxer de configuració de log4j
 
-# Spring
+# Spring 
 
 ## Arrancar configuracio de beans
 
@@ -137,6 +137,31 @@ Por estructura de proyecto, las dependencias se autoinyectan por la jerarquia de
 Per fer el log, spring utilitza una façana per encapsular la majoria de frameworks de logs. Aquesta es diu slf4j
 
 spring-boot per defecte utilitza logback, però spring-data amb hibernate utilitza log4j
+
+## Marques:
+En spring s'han de marcar les classes segons la capa on estan. Son informatives i a vegades afegeixen funcionalitat. 
+
++ @Repository: Capa Dao
++ @Service: Classe negocy
++ @RestController: Servei Rest
++ @Controller: Implementant Spring MVC, el controlador de la capa de presentació
+
+Per separat
++ @Configuration: Per la configuració
++ @Component: Objectes generals 
+
+Si el component no té un value, t'agafa per defecte el mateix nom de la clase però la primera lletra en minuscules
+## Scopes
+
+Spring permet tenir diferents scopes, si no es fica res, utilitza l'scope singleton
+
+Els scopes per defecte d'spring son:
+
++ singleton : By default
++ prototype
++ request
++ session
++ global session
 
 # Spring-boot
 

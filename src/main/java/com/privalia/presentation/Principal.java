@@ -2,7 +2,6 @@ package com.privalia.presentation;
 
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import com.privalia.presentation.HelloWorld;
 
 
 public class Principal {
