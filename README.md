@@ -128,6 +128,11 @@ PropertyConfigurator.configure <= permet indicar on esta i com es diu el fitxer 
 
 hi han les dos opcions ClassPathXmlApplicationContext i AnnotationConfigApplicationContext
 
+## Configuracio
+
+Per l'xml es pot fer herencia, polimorfisme etc...
+
+També es poden instanciar classes del JDK.
 
 ## Jerarquia de carpetas
 
@@ -166,6 +171,9 @@ Els scopes per defecte d'spring son:
 # Spring-boot
 
 [spring boot initializr](http://start.pring.io)
+
+Spring-boot facilita l'incorporació de dependencies, usant grups de dependencies, 
+que s'anomenen starters
 
 Porta instalat Tomcat, Jetty i Undertow
 

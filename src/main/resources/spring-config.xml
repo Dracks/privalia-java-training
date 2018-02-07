@@ -4,10 +4,16 @@
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:c="http://www.springframework.org/schema/c"
        xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
 
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- Test -->
+    <context:property-placeholder location="classpath:config.properties"/>
+
+    <!-- / Test -->
     <bean id="helloWorld" class="com.privalia.presentation.configuration.HelloWorld">
         <property name="hello" value="Hola holita vecinillo"/>
     </bean>
@@ -24,4 +30,26 @@
     </bean>
 
     <bean id="emkployee" class="com.privalia.builderexample.Employee" factory-bean="builder" factory-method="build"/>
+
+    <bean id="student" class="com.privalia.entity.Student">
+        <property name="idStudent" value="1"/>
+        <property name="name" value="Pepe"/>
+        <property name="age" value="24"/>
+        <property name="address" >
+            <ref bean="address"/>
+        </property>
+    </bean>
+
+    <bean id="address" class="com.privalia.entity.Address">
+        <constructor-arg index="0" value="1" type="int" />
+        <constructor-arg index="1" value="alskdfjasldf" type="java.lang.String" />
+    </bean>
+
+    <bean id="studentConstructor" class="com.privalia.entitity.Student">
+        <constructor-arg index="0" value="${student.idstudent}" type="int" />
+        <constructor-arg index="1" value="${student.name}" type="java.lang.String" />
+        <constructor-arg index="2" value="${student.surname}" type="java.lang.String" />
+        <constructor-arg index="3" value="${student.age}" type="int" />
+        <constructor-arg index="4" ref="address" />
+    </bean>
 </beans>
