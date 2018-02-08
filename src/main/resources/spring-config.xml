@@ -33,7 +33,7 @@
 
     <bean id="emkployee" class="com.privalia.builderexample.Employee" factory-bean="builder" factory-method="build"/>
 
-    <bean id="student" class="com.privalia.entity.Student">
+    <bean id="student" class="com.privalia.entity.configuration.Student">
         <property name="idStudent" value="1"/>
         <property name="name" value="Pepe"/>
         <property name="age" value="24"/>
@@ -42,12 +42,12 @@
         </property>
     </bean>
 
-    <bean id="address" class="com.privalia.entity.Address">
+    <bean id="address" class="com.privalia.entity.configuration.Address">
         <constructor-arg index="0" value="1" type="int" />
         <constructor-arg index="1" value="alskdfjasldf" type="java.lang.String" />
     </bean>
 
-    <bean id="studentConstructor" class="com.privalia.entity.Student">
+    <bean id="studentConstructor" class="com.privalia.entity.configuration.Student">
         <constructor-arg index="0" value="${student.idStudent}" type="int" />
         <constructor-arg index="1" value="${student.name}" type="java.lang.String" />
         <constructor-arg index="2" value="${student.surname}" type="java.lang.String" />

@@ -1,4 +1,4 @@
-package com.privalia.entity;
+package com.privalia.entity.configuration;
 
 import lombok.Cleanup;
 import org.springframework.context.support.AbstractApplicationContext;

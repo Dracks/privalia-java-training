@@ -1,4 +1,4 @@
-package com.privalia.entity;
+package com.privalia.entity.configuration;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
