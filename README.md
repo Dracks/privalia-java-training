@@ -29,6 +29,11 @@ constructor d'objecte
 
 En Java Web, tenim variables d'applicació, son variables que conté el servidor web. 
 
+## Classpath
+
+Pots tenir un classpath de compilat i de sistema operatiu, perque vagi a buscar 
+les llibreries en el sistema.
+
 ## Compilats Java
 - jar
 - war

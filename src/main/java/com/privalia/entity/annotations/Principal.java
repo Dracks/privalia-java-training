@@ -1,13 +1,14 @@
 package com.privalia.entity.annotations;
 
 import lombok.Cleanup;
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Principal {
     public static void main(String[] args){
 
-        @Cleanup AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+        @Cleanup AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        context.scan(Principal.class.getPackage().getName());
+        context.refresh();
 
         Student student = (Student) context.getBean("student");
 
