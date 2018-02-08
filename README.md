@@ -140,6 +140,8 @@ PropertyConfigurator.configure <= permet indicar on esta i com es diu el fitxer 
 
 # Spring 
 
+Tutorial interessant: http://www.mkyong.com/tutorials/spring-tutorials/
+
 ## Arrancar configuracio de beans
 
 hi han les dos opcions ClassPathXmlApplicationContext i AnnotationConfigApplicationContext
@@ -172,6 +174,11 @@ Per separat
 + @Component: Objectes generals 
 
 Si el component no té un value, t'agafa per defecte el mateix nom de la clase però la primera lletra en minuscules
+
+## Profiles
+
+Serveixen per seleccionar el codi que s'executa, triar classes, etc. es configuren per el config.properties
+
 ## Scopes
 
 Spring permet tenir diferents scopes, si no es fica res, utilitza l'scope singleton
