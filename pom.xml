@@ -47,6 +47,40 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <executions>
+                    <!-- First execution executing jmeter-maven-plugin -->
+                    <execution>
+                        <id>config</id>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>
+                                com.privalia.entity.configuration.Principal
+                            </mainClass>
+                        </configuration>
+                    </execution>
+                    <!-- Second execution executing jmeter-graph-maven-plugin -->
+                    <execution>
+                        <id>annotations</id>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>
+                                com.privalia.entity.annotations.Principal
+                            </mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <executable>mvn</executable>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>

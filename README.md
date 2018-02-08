@@ -82,6 +82,17 @@ Té la funcionalitat d'"expected exception" per validar que s'esta llençant una
 
 # Maven
 
+## Execucions
+
+La configuració d'execució de parametres, es poden configurar 3 parametres:
+
++ id: El id d'execució
++ goal: Per indicar el llenguatge amb el que ha d'executar el programa
++ mainClass: La clase principal d'executar el main
+
+s'ha d'executar sempre dins de target, i s'executa així:
+    mvn exec:java@config
+
 ## Run concrete tests
 Testeja una clase
 > mvn test -Dtest=$classNameTest 
