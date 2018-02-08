@@ -4,18 +4,12 @@
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:c="http://www.springframework.org/schema/c"
        xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:context="http://www.springframework.org/schema/context"
 
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
 ">
 
-    <!-- Test -->
-    <context:property-placeholder location="classpath:config.properties"/>
-
-    <!-- / Test -->
     <bean id="helloWorld" class="com.privalia.presentation.configuration.HelloWorld">
         <property name="hello" value="Hola holita vecinillo"/>
     </bean>
@@ -24,7 +18,7 @@
         <constructor-arg index="0" value="Hola holita des del vecinillo!" type="java.lang.String"/>
     </bean>
 
-    <bean id="builder" class="com.privalia.builderexample.Employee$EmployeeBuilder">
+    <bean id="builder" class="com.privalia.builderexaple.Employee$EmployeeBuilder">
         <constructor-arg value="1"/>
         <constructor-arg value="Dalek" />
         <property name="gender" value="1" />
@@ -53,5 +47,10 @@
         <constructor-arg index="2" value="${student.surname}" type="java.lang.String" />
         <constructor-arg index="3" value="${student.age}" type="int" />
         <constructor-arg index="4" ref="address" />
+    </bean>
+    <bean  class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>config.properties</value>
+        </property>
     </bean>
 </beans>
