@@ -53,4 +53,23 @@
             <value>config.properties</value>
         </property>
     </bean>
+
+    <bean id="david3Student" class="com.privalia.entity.configuration.listas.Student">
+        <property name="idStudent" value="1"/>
+        <property name="name" value="Dr"/>
+        <property name="surname" value="Who" />
+        <property name="age" value="24"/>
+        <property name="teacherList">
+            <list>
+                <bean class="com.privalia.entity.configuration.listas.Teacher">
+                    <property name="idTeacher" value="1" />
+                    <property name="name" value="Jordi" />
+                </bean>
+                <bean class="com.privalia.entity.configuration.listas.Teacher">
+                    <property name="idTeacher" value="1" />
+                    <property name="name" value="Pepe" />
+                </bean>
+            </list>
+        </property>
+    </bean>
 </beans>
