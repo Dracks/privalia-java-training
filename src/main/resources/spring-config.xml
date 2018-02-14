@@ -72,4 +72,17 @@
             </list>
         </property>
     </bean>
+
+    <bean id="compra" class="com.privalia.aspectos.Compra"/>
+    <bean id="validarMaterial" class="com.privalia.aspectos.ValidarMaterial"/>
+    
+    <aop:config>
+        <aop:aspect ref="validarMaterial">
+            <aop:pointcut id="compraPointCut" expression="execution( * com.privalia.aspectos.Compra.compra(..) )"/>
+            <aop:before method="comprobarCantidad" pointcut-ref="compraPointCut"/>
+            <aop:after-returning method="empaquetar" pointcut-ref="compraPointCut"/>
+            <aop:after-throwing method="ponerReclamacion" pointcut-ref="compraPointCut"/>
+        </aop:aspect>
+    </aop:config>
+
 </beans>
