@@ -1,13 +1,13 @@
 package com.privalia.aspectos.annotations;
 
+import com.privalia.generics.PrincipalAnnotationGenerics;
 import lombok.Cleanup;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class Principal {
-    public static void main(String[] args){
-        @Cleanup AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-        ctx.scan("com.privalia.aspectos.annotations");
-        ctx.refresh();
+import java.io.IOException;
+
+public class Principal  extends PrincipalAnnotationGenerics {
+
+    public void run(String[] args){
         Compra cp = ctx.getBean(Compra.class);
 
         try {
@@ -18,5 +18,14 @@ public class Principal {
         } catch (Exception e) {
             System.out.println("Obtenemos la excepcion " + e);
         }
+    }
+    public static void main(String[] args){
+        try (Principal p = new Principal()){
+            p.run(args);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }
