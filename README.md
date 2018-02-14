@@ -24,6 +24,10 @@ constructor de classes (Inicialitzador static)
 
 constructor d'objecte
 
+# Grovy
+
+Permet configurar el logback, y també fer coses a gradle. 
+
 
 #Java
 
@@ -199,6 +203,25 @@ Spring-boot facilita l'incorporació de dependencies, usant grups de dependencie
 que s'anomenen starters
 
 Porta instalat Tomcat, Jetty i Undertow
+
+## base.xml
+
+Es la configuració base de slf4j. 
+
+Proporciona, dos appenders: console-appender.xml y file-appender.xml
+
+## Configuracions
+
+application.properties, o application-{profile}.properties. 
+Per defecte t'agafa els valors de l'application.propertires, amb el
+ -Dspring.profiles.active=$profile pots indicar més d'un profile perque s'executin.
+ Si els application-{profile}.properties no conte valors, els agafa del general. L'ordre d'agafar els valors és
+ del primer a l'ultim profile.   
+
+### Configuracions externes
+
+Pots definir on esta el externa.properties amb el -Dconfig.location=$pathExternalProperties. 
+Una forma més senzilla és amb el fitxer de properties al costat del compilat, amb el nom application.properties. 
 
 ## LLibreries utilitzades:
  + spring cloud config
