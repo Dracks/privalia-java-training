@@ -220,6 +220,12 @@ Es un llenguatge propi de confdiguració que s'utilitza també en els condiciona
 Pots arribar a configurar les regles a nivell del XML. 
 
 
+## Testing
+
+### Injectar dependencies
+
+* @RunWith(SpreingJUnit4ClassRunner.class), sols permet un runwith per test. Es recomana no utilitzar això. 
+* @ClassRule y @Rule que son condicions de JUnit. 
 
 # Spring-boot
 
