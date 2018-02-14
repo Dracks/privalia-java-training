@@ -20,12 +20,8 @@ public class Principal  extends PrincipalAnnotationGenerics {
         }
     }
     public static void main(String[] args){
-        try (Principal p = new Principal()){
-            p.run(args);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
+        @Cleanup
+        Principal p = new Principal();
+        p.run(args);
     }
 }

@@ -150,6 +150,12 @@ Tutorial interessant: http://www.mkyong.com/tutorials/spring-tutorials/
 
 hi han les dos opcions ClassPathXmlApplicationContext i AnnotationConfigApplicationContext
 
+## Condicionals
+
+S'ha d'iplementar l'interficie condició. I podrem treure les propietats del context. 
+
+En el Readme de l'app és recomenable indicar tots els parametres de la linia de comandes. 
+
 ## Configuracio
 
 Per l'xml es pot fer herencia, polimorfisme etc...
@@ -183,6 +189,18 @@ Si el component no té un value, t'agafa per defecte el mateix nom de la clase p
 
 Serveixen per seleccionar el codi que s'executa, triar classes, etc. es configuren per el config.properties
 
+Es pot configurar els profiles de forma programativa i al executar-ho per comanda. Programativament és fa de la seguent forma:
+```
+context.getEnvironment().setActiveProfiles("live", "linux");
+```
+
+Tota applicació web, té un fitxer web.xml, que en springboot no es veu, però es poden configurar moltes propietats web. 
+
+
+Per els units tests, es faria a treves d'@ActiveProfiles("test-profile").
+
+l'@Profile, es pot executar a nivell de metode. 
+
 ## Scopes
 
 Spring permet tenir diferents scopes, si no es fica res, utilitza l'scope singleton
@@ -194,6 +212,14 @@ Els scopes per defecte d'spring son:
 + request
 + session
 + global session
+
+## SPEL
+
+Es un llenguatge propi de confdiguració que s'utilitza també en els condicionals. 
+
+Pots arribar a configurar les regles a nivell del XML. 
+
+
 
 # Spring-boot
 

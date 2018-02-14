@@ -5,7 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import java.io.Closeable;
 import java.io.IOException;
 
-public class PrincipalAnnotationGenerics implements Closeable {
+public class PrincipalAnnotationGenerics{
     protected final AnnotationConfigApplicationContext ctx;
 
     public PrincipalAnnotationGenerics(){
@@ -14,8 +14,14 @@ public class PrincipalAnnotationGenerics implements Closeable {
         ctx.refresh();
     }
 
-    @Override
-    public void close() throws IOException {
+    public PrincipalAnnotationGenerics(String profile){
+        ctx = new AnnotationConfigApplicationContext();
+        ctx.getEnvironment().setActiveProfiles(profile);
+        ctx.scan(this.getClass().getPackage().getName());
+        ctx.refresh();
+    }
+
+    public void close() {
         ctx.close();
     }
 }
