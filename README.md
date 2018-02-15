@@ -8,6 +8,10 @@ Spring porta el aspecte transactional.
 
 JUnit és el clar exemple de Programació orientada aspectes: SetUp, TearDown... 
 
+# Cucumber
+
+Cucumber per defecte no és compatible amb spring, per lo que s'ha d'afegir l'extension. 
+
 # Model
 
 Tot objecte hauria de tenir un Unic Identifier. (gid=> Global Id)
@@ -234,7 +238,9 @@ Pots arribar a configurar les regles a nivell del XML.
 Spring-boot facilita l'incorporació de dependencies, usant grups de dependencies, 
 que s'anomenen starters
 
-Porta instalat Tomcat, Jetty i Undertow
+Porta instalat Tomcat, Jetty i Undertow. El per defecte és Tomcat
+
+Porta moltes default configurations. I en springboot és una màxima __convention over configuration__
 
 ## base.xml
 
@@ -271,7 +277,23 @@ Es pot utilitzar una repositori de git.
 
 Permet autoconfigurar les apis, perque el client no hagi d'anar configurar les URL.
 
+# Spring-Data
+
+Paquet per guardar les dades en base de dades. 
+
+Utilitzarem hibernate per conectarnos a la base de dades. 
+
 # Altres
+## Hibernate tools
+
+Con Hibernate tools es pot generar la base de dades i els models. 
+
+## JBoss-tools
+
+Jboss tools, porta incorporat una eina per generar la base de dades sql en base a hibernate i
+també al reves. 
+
+També s'integra am docker i openshift. 
 
 ## Lombock
 @Data en el objecte, et proporciona getters and setters, el constructor el equals, el canEquals, hashcode y el toString
