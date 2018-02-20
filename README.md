@@ -28,6 +28,14 @@ constructor de classes (Inicialitzador static)
 
 constructor d'objecte
 
+# Gradle
+
+Requereix tenir el spring-boot-gradle-plugin
+
+Es pot configurar en el jar, el Main-Class del manifest. 
+
+Els plugins de gradle, afegeixen tasques.
+
 # Grovy
 
 Permet configurar el logback, y també fer coses a gradle. 
@@ -242,7 +250,10 @@ Porta instalat Tomcat, Jetty i Undertow. El per defecte és Tomcat
 
 Porta moltes default configurations. I en springboot és una màxima __convention over configuration__
 
-Es recomana instalar devtools i actuator
+Es recomana instalar devtools i actuator.
+
+En h2, un cop ben configurat, et crea una url console, on et pot administrar la base de dades en memoria ram. 
+L'unic que s'ha tingut de canviar és la url, que inicialment crea la base de dades test. 
 
 ## base.xml
 
@@ -279,11 +290,41 @@ Es pot utilitzar una repositori de git.
 
 Permet autoconfigurar les apis, perque el client no hagi d'anar configurar les URL.
 
-# Spring-Data
+## Spring-Data
 
 Paquet per guardar les dades en base de dades. 
 
-Utilitzarem hibernate per conectarnos a la base de dades. 
+Utilitzarem hibernate per conectarnos a la base de dades. L'hibernate té diferents dialectes, per els diferents SQL. 
+
+## Starters
+
+ + starter-web: Permet crear qualsevol tipos de web
+ + starter-data-jpa: Java persistance api. 
+ + starter-data-rest: Webservices orientats a dades
+ + starter-security: Per treballar amb autenticació 
+ + spring-boot-devtools: Permet canviar clases del context en runtime. > remote-live-reload (plugin per refrescar en 
+ calent el codi)
+ + spring-boot-starter-test: per fer els testings. 
+
+
+Afegir una llibreria de base de dades, implica tenir de configurarla.
+
+## Swagger 
+
+Si vull que la documentació estigui a la documentacio, he de ficar apiModelProperty i especificar la documentación. 
+
+## Validacions
+
+Per fer les validacions automatiques del model, s'ha d'indicar el @Valid en el product rest controller. 
+
+### Validacions en el model. 
+
+Es poden fer tot amb la base dels decorators obtingutx de javax.constraints.validators.
+
+### Validacions custom
+
+Per fer un custom validation, s'ha de fer una clase que implementi la Clase: ConstraintValidator per validar 
+la constraint i un decorator 
 
 # Altres
 ## Hibernate tools
