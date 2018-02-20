@@ -242,6 +242,8 @@ Porta instalat Tomcat, Jetty i Undertow. El per defecte és Tomcat
 
 Porta moltes default configurations. I en springboot és una màxima __convention over configuration__
 
+Es recomana instalar devtools i actuator
+
 ## base.xml
 
 Es la configuració base de slf4j. 
