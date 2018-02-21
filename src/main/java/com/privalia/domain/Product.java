@@ -1,7 +1,6 @@
 package com.privalia.domain;
 
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -10,7 +9,6 @@ import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
 @Entity
-@Data
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,4 +34,52 @@ public class Product {
     @NotNull
     @Min(1)
     private BigDecimal price;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
 }

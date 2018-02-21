@@ -4,8 +4,12 @@ import com.privalia.configuration.RepositoryConfiguration;
 import com.privalia.domain.Product;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -20,11 +24,16 @@ import static org.junit.Assert.assertNull;
 @SpringBootTest(classes={RepositoryConfiguration.class})
 public class ProductRepositoryTest {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProductRepositoryTest.class);
+
     Product product1;
     Product product2;
 
     @Autowired
     ProductRepository subject;
+
+    @Rule
+    public TestName testName = new TestName();
 
     @Before
     public void setUp(){
@@ -39,10 +48,12 @@ public class ProductRepositoryTest {
         product2.setPrice(new BigDecimal("23.85"));
         product2.setProductId("1233");
         subject.save(product2);
+        LOGGER.info("======= Start "+testName.getMethodName()+" =======");
     }
 
     @After
     public void tearDown() throws Exception{
+        LOGGER.info("======= Finish "+testName.getMethodName()+" =======");
         subject.deleteAll();
     }
 
@@ -88,7 +99,7 @@ public class ProductRepositoryTest {
     }
 
     @Test
-    public void testUpdateAddress(){
+    public void testUpdateDescription(){
         assertEquals(1, subject.updateProduct(product1.getId(), "New Updated Description"));
     }
 }
