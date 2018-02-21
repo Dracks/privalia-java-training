@@ -76,4 +76,19 @@ public class ProductRepositoryTest {
         subject.delete(product1.getId());
         assertNull(subject.findOne(product1.getId()));
     }
+
+    @Test
+    public void testFindByProductId(){
+        assertNotNull(subject.findByProductId(product1.getProductId()));
+    }
+
+    @Test
+    public void testFindByDescriptionAndPrice(){
+        assertNotNull(subject.findByDescriptionAndPrice(product1.getDescription(), product1.getPrice()));
+    }
+
+    @Test
+    public void testUpdateAddress(){
+        assertEquals(1, subject.updateProduct(product1.getId(), "New Updated Description"));
+    }
 }

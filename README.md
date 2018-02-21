@@ -294,7 +294,21 @@ Permet autoconfigurar les apis, perque el client no hagi d'anar configurar les U
 
 Paquet per guardar les dades en base de dades. 
 
-Utilitzarem hibernate per conectarnos a la base de dades. L'hibernate té diferents dialectes, per els diferents SQL. 
+Utilitzarem hibernate per conectarnos a la base de dades. L'hibernate té diferents dialectes, per els diferents SQL.
+
+per fer un update és faria com:
+```
+@Modifying
+@Transactional
+@Query("UPDATE...")
+int updateProduct(...) 
+```
+Notar que la funció al contenir el @Modifying et retornarà el numero de updates que es facin. 
+
+```
+@DynamicUpdate(value=true)
+```
+Això permet que nomès s'actualitzin els camps que s'han modificat. és una anotació d'hibernate
 
 ## Starters
 
