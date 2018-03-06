@@ -255,6 +255,9 @@ Es recomana instalar devtools i actuator.
 En h2, un cop ben configurat, et crea una url console, on et pot administrar la base de dades en memoria ram. 
 L'unic que s'ha tingut de canviar és la url, que inicialment crea la base de dades test. 
 
+
+Spring-boot amb l'starter d'h2, implementa hateoas
+
 ## base.xml
 
 Es la configuració base de slf4j. 
@@ -310,6 +313,17 @@ Notar que la funció al contenir el @Modifying et retornarà el numero de update
 ```
 Això permet que nomès s'actualitzin els camps que s'han modificat. és una anotació d'hibernate
 
+## Spring boot actuator
+
+És per treballar amb endpoints, ens proporciona els següents:
+- /health
+- /env: Ens proporciona els active profiles, contè totes les variables d'entorn. Es poden crear variables d'entorn per
+ veureles aqui custom
+- beans: Ens diu totes les beans en memoria i quin scope
+- trace: Guarda totes les traces de les diferents peticions que rep el servei
+
+
+Tots els endpoints es poden veure aquí: https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-endpoints
 ## Starters
 
  + starter-web: Permet crear qualsevol tipos de web
