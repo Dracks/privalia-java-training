@@ -96,6 +96,9 @@ Classes per portar les promeses aquí.
 
 Té la funcionalitat d'"expected exception" per validar que s'esta llençant una excepció
 
+# Kafka 
+
+Sistema de cues, mirar en el quickstart: https://kafka.apache.org/quickstart
 # Maven
 
 ## Execucions
