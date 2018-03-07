@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.11.BUILD-SNAPSHOT'
+		springBootVersion = '1.5.10.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -9,6 +9,9 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+	configurations {
+		compile.exclude module: "spring-boot-starter-tomcat"
 	}
 }
 
@@ -28,7 +31,10 @@ repositories {
 
 
 dependencies {
+	compile('org.springframework.boot:spring-boot-starter-undertow')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.kafka:spring-kafka')
+	compile('org.projectlombok:lombok:1.16.20')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.springframework.kafka:spring-kafka-test')
 }
