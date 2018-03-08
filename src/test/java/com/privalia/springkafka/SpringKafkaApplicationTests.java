@@ -52,7 +52,7 @@ public class SpringKafkaApplicationTests {
 
 		receiver.getLatch().await(10, TimeUnit.SECONDS);
 		assertThat(receiver.getLatch().getCount()).isEqualTo(0);
-		assertTrue(Receiver.receiveMessagesList.size() == 1);
-		assertEquals(text, Receiver.receiveMessagesList.get(0));
+		assertTrue(receiver.getReceiveMessagesList().size() == 1);
+		assertEquals(text, receiver.getReceiveMessagesList().get(0));
 	}
 }

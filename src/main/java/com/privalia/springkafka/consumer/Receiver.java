@@ -9,7 +9,7 @@ import java.util.concurrent.CountDownLatch;
 @Slf4j
 public class Receiver {
 
-    public static ArrayList<String> receiveMessagesList = new ArrayList<>();
+    private ArrayList<String> receiveMessagesList = new ArrayList<>();
 
     private CountDownLatch latch = new CountDownLatch(1);
 
@@ -22,6 +22,10 @@ public class Receiver {
         log.info("Received payload='{}", payload);
         receiveMessagesList.add(payload);
         latch.countDown();
+    }
+
+    public ArrayList<String> getReceiveMessagesList(){
+        return this.receiveMessagesList;
     }
 
 }

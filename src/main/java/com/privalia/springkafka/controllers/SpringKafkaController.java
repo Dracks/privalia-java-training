@@ -18,9 +18,12 @@ public class SpringKafkaController {
     @Autowired
     private Sender sender;
 
+    @Autowired
+    private Receiver receiver;
+
     @RequestMapping(value = "/messages/", method = RequestMethod.GET, produces = "application/json")
     public List<String> getMessages(){
-        return Receiver.receiveMessagesList;
+        return receiver.getReceiveMessagesList();
     }
 
     @RequestMapping(value="/messages/", method= RequestMethod.POST, produces="test/plain")
