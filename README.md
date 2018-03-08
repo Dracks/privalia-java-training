@@ -292,6 +292,13 @@ Montar un microserveis per gestionar totes les configuracions dels servidors.
 
 Es pot utilitzar una repositori de git. 
 
+Tutorial: https://picodotdev.github.io/blog-bitix/2015/11/configuracion-de-una-aplicacion-en-diferentes-entornos-con-spring-cloud-config/
+
+configurar el yaml, 
+Dependencies: 
+spring-cloud-config 
+spring-cloud-config-server
+
 ## Spring HateOAS
 
 Permet autoconfigurar les apis, perque el client no hagi d'anar configurar les URL.
