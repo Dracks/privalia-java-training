@@ -17,6 +17,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -45,9 +47,12 @@ public class SpringKafkaApplicationTests {
 
 	@Test
 	public void testReceive() throws Exception{
-		sender.send(HELLOWORLD_TOPIC, "Hello Spring Kafka!");
+		String text = "Hello Spring Kafka!" + Math.random();
+		sender.send(HELLOWORLD_TOPIC, text);
 
 		receiver.getLatch().await(10, TimeUnit.SECONDS);
 		assertThat(receiver.getLatch().getCount()).isEqualTo(0);
+		assertTrue(Receiver.receiveMessagesList.size() == 1);
+		assertEquals(text, Receiver.receiveMessagesList.get(0));
 	}
 }
