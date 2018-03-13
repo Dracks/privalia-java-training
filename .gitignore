@@ -1,4 +1,5 @@
+build/
 .idea
-target
-java.iml
-AlumnoCon.log
+.classpath
+.project
+
