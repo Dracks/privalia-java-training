@@ -370,9 +370,21 @@ Per fer un custom validation, s'ha de fer una clase que implementi la Clase: Con
 la constraint i un decorator 
 
 # Altres
+
+## Eureka
+
+take a look at:
+https://www.paradigmadigital.com/dev/el-microservicio-eureka-a-fondo-12/
+
+Automaticament mira el endpoint /health per veure si està operatiu, i pots tenir diferents estats de l'app. 
+
+
 ## Netflix Zool
 
 It's an apy gateway using spring. 
+
+Sample project at git@github.com:ExampleDriven/spring-cloud-zuul-example.git
+
 
 ## Hibernate tools
 
