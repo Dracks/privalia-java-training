@@ -370,6 +370,10 @@ Per fer un custom validation, s'ha de fer una clase que implementi la Clase: Con
 la constraint i un decorator 
 
 # Altres
+## Netflix Zool
+
+It's an apy gateway using spring. 
+
 ## Hibernate tools
 
 Con Hibernate tools es pot generar la base de dades i els models. 
