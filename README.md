@@ -177,6 +177,11 @@ Per l'xml es pot fer herencia, polimorfisme etc...
 
 També es poden instanciar classes del JDK.
 
+## Deploy sobre servidors externs
+
+S'ha de canviar el jar a war, i pujar el war dins de l'app. També seria bo fer un exclude de totes les 
+llibreries de servidors. I s'afegeix el plugin de maven: maven-war-plugin.
+
 ## Jerarquia de carpetas
 
 Por estructura de proyecto, las dependencias se autoinyectan por la jerarquia de carpetas
@@ -386,3 +391,9 @@ Plain old Java Objects
 
 ## Reflexión
 Spring utilitza "Reflexión" en català, introspecció.
+
+# View Framework
+
+Struts, 
+JSF (Standard),
+Spring MVC 
